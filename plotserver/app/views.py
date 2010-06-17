@@ -14,9 +14,13 @@ def index(request):
 
     if not jsplot_import_ok:
         # use some demo data for debugging/testing purposes
+        from numpy import arange, pi, sin
+        x = arange(0, 3*pi, 0.1)
+        y1 = sin(x)
+        y2 = sin(x*sin(x))
         data = [
-                {"data": [[1, 1], [3, 3]], "label": "sin(x)"},
-                {"data": [[1, 1], [3, 4]], "label": "sin(x*sin(x))"},
+                {"data": zip(x, y1), "label": "sin(x)"},
+                {"data": zip(x, y2), "label": "sin(x*sin(x))"},
                 ]
     graphs = json.dumps(data)
     return render_to_response("index.html", {
