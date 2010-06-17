@@ -8,12 +8,20 @@ import json
 def index(request):
     try:
         from jsplot.plot import data
+        jsplot_import_ok = True
     except ImportError:
-        print "Can't import 'data'. Make sure jsplot is in your PYTHONPATH"
-        raise
+        jsplot_import_ok = False
+
+    if not jsplot_import_ok:
+        # use some demo data for debugging/testing purposes
+        data = [
+                {"data": [[1, 1], [3, 3]], "label": "sin(x)"},
+                {"data": [[1, 1], [3, 4]], "label": "sin(x*sin(x))"},
+                ]
     graphs = json.dumps(data)
     return render_to_response("index.html", {
         "graphs": graphs,
+        "show_import_warning": not jsplot_import_ok,
         }, context_instance=RequestContext(request))
 
 def raphael(request):

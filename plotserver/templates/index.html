@@ -12,6 +12,12 @@ JSPlot Figure
 {% block content %}
 <h1>Figure</h1>
 
+{% if show_import_warning %}
+    <p><code>from jsplot.plot import data</code> failed, which means that we
+    can't access the data to be plotted. Make sure you can import it and try
+    again. Showing some demo data below:</p>
+{% endif %}
+
 <div style="float:left">
   <div id="placeholder" style="width:500px;height:300px"></div>
 </div>
