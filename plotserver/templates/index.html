@@ -29,15 +29,24 @@ plot. Try selecting a rectangle on either of them.
 <script id="source">
 $(function () {
     // setup plot
-    function getData(x1, x2) {
-        var d = [];
-        for (var i = 0; i <= 100; ++i) {
-            var x = x1 + i * (x2 - x1) / 100;
-            d.push([x, Math.sin(x * Math.sin(x))]);
-        }
-
+    function getData() {
+        var d1 = [
+            [-1, 1],
+            [0, 1],
+            [1, 2],
+            [2, 1],
+            [3, 1.5],
+            ];
+        var d2 = [
+            [-1, 1.5],
+            [0, 1.5],
+            [1, 0.5],
+            [2, 1.2],
+            [3, 1.2],
+            ];
         return [
-            { label: "sin(x sin(x))", data: d }
+            { label: "data d1", data: d1 },
+            { label: "data d2", data: d2 },
         ];
     }
 
@@ -51,7 +60,7 @@ $(function () {
         selection: { mode: "xy" }
     };
 
-    var startData = getData(0, 3 * Math.PI);
+    var startData = getData();
 
     var plot = $.plot($("#placeholder"), startData, options);
 
