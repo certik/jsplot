@@ -5,6 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+        (r'^$', 'plotserver.app.views.index'),
     # Example:
     # (r'^plotserver/', include('plotserver.foo.urls')),
 
