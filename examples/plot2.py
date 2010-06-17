@@ -1,7 +1,7 @@
 from math import sin, pi
 
 from numpy import array
-from pylab import plot, savefig
+from jsplot import plot, show
 
 def get_data1():
     x1 = 0
@@ -29,4 +29,4 @@ d = array(get_data2())
 x = d[:, 0]
 y = d[:, 1]
 plot(x, y, label="sin(x)")
-savefig("a.png")
+show()
