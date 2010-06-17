@@ -5,3 +5,8 @@ def index(request):
     return render_to_response("index.html",
         context_instance=RequestContext(request)
         )
+
+def raphael(request):
+    return render_to_response("raphael.html",
+        context_instance=RequestContext(request)
+        )

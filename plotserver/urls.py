@@ -9,6 +9,7 @@ p = os.path.join(os.path.dirname(__file__), 'media_files/')
 
 urlpatterns = patterns('',
         (r'^$', 'plotserver.app.views.index'),
+        (r'^raphael/$', 'plotserver.app.views.raphael'),
         (r'^media_files/(?P<path>.*)$', 'django.views.static.serve',
                             {'document_root': p}),
 )
