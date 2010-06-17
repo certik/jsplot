@@ -1,0 +1,7 @@
+JSPlot
+------
+
+To run it, do:
+
+cd plotserver
+./manage.py runserver
