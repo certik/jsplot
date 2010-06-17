@@ -78,7 +78,7 @@ $(function () {
             ranges.yaxis.to = ranges.yaxis.from + 0.00001;
 
         // do the zooming
-        plot = $.plot($("#placeholder"), getData(ranges.xaxis.from, ranges.xaxis.to),
+        plot = $.plot($("#placeholder"), startData,
                       $.extend(true, {}, options, {
                           xaxis: { min: ranges.xaxis.from, max: ranges.xaxis.to },
                           yaxis: { min: ranges.yaxis.from, max: ranges.yaxis.to }
