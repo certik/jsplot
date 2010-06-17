@@ -5,6 +5,13 @@ JSPlot
 {% endblock %}
 
 {% block header_ext %}
+<script src="{{ MEDIA_URL }}js/raphael.js"></script>
+<script src="{{ MEDIA_URL }}js/g.raphael.js"></script>
+<script src="{{ MEDIA_URL }}js/g.line.js"></script>
+<script src="{{ MEDIA_URL }}js/g.bar.js"></script>
+<script src="{{ MEDIA_URL }}js/g.dot.js"></script>
+<script src="{{ MEDIA_URL }}js/g.pie.js"></script>
+
 <script type="text/javascript" charset="utf-8">
 window.onload = function () {
     var r = Raphael("holder");
@@ -43,7 +50,7 @@ window.onload = function () {
 {% endblock %}
 
 {% block content %}
-<h1>Plot Demo</h1>
+<h1>Raphael Demo</h1>
 <div id="holder"></div>
 Done.
 {% endblock %}
