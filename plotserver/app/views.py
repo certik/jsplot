@@ -11,7 +11,8 @@ def index(request):
         jsplot_import_ok = True
     except ImportError:
         jsplot_import_ok = False
-
+    if jsplot_import_ok and data == []:
+        jsplot_import_ok = False
     if not jsplot_import_ok:
         # use some demo data for debugging/testing purposes
         from numpy import arange, pi, sin

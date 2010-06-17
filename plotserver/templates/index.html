@@ -13,9 +13,10 @@ JSPlot Figure
 <h1>Figure</h1>
 
 {% if show_import_warning %}
-    <p><code>from jsplot.plot import data</code> failed, which means that we
-    can't access the data to be plotted. Make sure you can import it and try
-    again. Showing some demo data below:</p>
+    <p><code>from jsplot.plot import data</code> failed (or the
+    <code>data</code> is empty), which means that we don't have any data to
+    be plotted. Make sure you can import it and try again. Showing some demo
+    data below:</p>
 {% endif %}
 
 <div style="float:left">
