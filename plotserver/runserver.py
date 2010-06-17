@@ -43,7 +43,7 @@ def main():
         # Need to use an OS exit because sys.exit doesn't work in a thread
         os._exit(1)
     except KeyboardInterrupt:
-        sys.exit(0)
+        return
 
 if __name__ == "__main__":
     main()
