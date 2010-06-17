@@ -1,5 +1,3 @@
-from numpy import array, concatenate
-
 data = []
 
 def plot(x, y, label=None):
@@ -11,4 +9,5 @@ def plot(x, y, label=None):
     data.append(d)
 
 def show():
-    print data
+    from plotserver.runserver import main
+    main()
