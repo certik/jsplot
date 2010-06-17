@@ -13,7 +13,7 @@ def main():
     import os
     import sys
 
-    sys.path.append("..")
+    sys.path.insert(0, "..")
     os.environ['DJANGO_SETTINGS_MODULE'] = "plotserver.settings"
 
     from django.core.servers.basehttp import run, AdminMediaHandler, WSGIServerException
