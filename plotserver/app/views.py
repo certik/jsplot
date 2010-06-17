@@ -20,7 +20,8 @@ def index(request):
         y1 = sin(x)
         y2 = sin(x*sin(x))
         data = [
-                {"data": zip(x, y1), "label": "sin(x)"},
+                {"data": zip(x, y1), "label": "sin(x)",
+                                    "points": {"show": True}},
                 {"data": zip(x, y2), "label": "sin(x*sin(x))"},
                 ]
     graphs = json.dumps(data)
