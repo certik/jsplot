@@ -12,8 +12,10 @@
         {% endblock %}
     </head>
     <body>
-        Menu: <a href="{% url index %}">Index</a> | <a
-            href="{% url raphael %}">Raphael</a>
+        Menu:
+        <a href="{% url index %}">Index</a> |
+        <a href="{% url raphael %}">Raphael</a> |
+        <a href="{% url flotr %}">Flotr</a>
         {% block content %}
         {% endblock %}
     </body>
