@@ -5,10 +5,21 @@ JSPlot is a library with Matplotlib like API, except that the ``show()``
 command launches a web server and you interact with the plot in the web
 browser.
 
-Example::
+Simple example::
 
     >>> from jsplot import plot, show
     >>> plot([1, 2, 3], [1, 2, 1])
+    >>> show()
+    Server is running at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+
+More complicated example::
+
+    >>> from numpy import arange, pi, sin
+    >>> from jsplot import plot, show
+    >>> x = arange(0, 3*pi, 0.01)
+    >>> plot(x, sin(x*sin(x)), label="sin(x*sin(x))")
+    >>> plot(x, sin(x), label="sin(x)")
     >>> show()
     Server is running at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
