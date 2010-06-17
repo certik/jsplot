@@ -7,9 +7,11 @@ from django.conf.urls.defaults import *
 import os.path
 p = os.path.join(os.path.dirname(__file__), 'media_files/')
 
-urlpatterns = patterns('',
-        (r'^$', 'plotserver.app.views.index'),
-        (r'^raphael/$', 'plotserver.app.views.raphael'),
+urlpatterns = patterns('plotserver.app.views',
+        url(r'^$', 'index', name="index"),
+        url(r'^raphael/$', 'raphael', name="raphael"),
+        ) + \
+    patterns('',
         (r'^media_files/(?P<path>.*)$', 'django.views.static.serve',
                             {'document_root': p}),
-)
+    )
