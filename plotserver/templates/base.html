@@ -12,7 +12,8 @@
         {% endblock %}
     </head>
     <body>
-        Menu: <a href="/">index</a> | <a href="/raphael/">Raphael</a>
+        Menu: <a href="{% url plotserver.app.views.index %}">index</a> | <a
+            href="{% url plotserver.app.views.raphael %}">Raphael</a>
         {% block content %}
         {% endblock %}
     </body>
