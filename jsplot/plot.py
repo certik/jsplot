@@ -1,6 +1,6 @@
 data = []
 
-def plot(x, y, label=None):
+def plot(x, y, format=None, label=None, lw=None):
     d = {
         "data": zip(x, y),
         }
