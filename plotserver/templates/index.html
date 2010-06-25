@@ -7,6 +7,8 @@ JSPlot Figure
 {% block header_ext %}
 <script src="{{ MEDIA_URL }}js/jquery.js"></script>
 <script src="{{ MEDIA_URL }}js/jquery.flot.js"></script>
+<script src="{{ MEDIA_URL }}js/base64.js"></script>
+<script src="{{ MEDIA_URL }}js/canvas2image.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -32,6 +34,7 @@ JSPlot Figure
 The small overview plot to the right has been connected to the large
 plot. Try selecting a rectangle on either of them.
 </p>
+<input type="button" id="savepngbtn" value="Save PNG">
 
 <script id="source">
 $(function () {
@@ -89,6 +92,10 @@ $(function () {
     $("#overview").bind("plotselected", function (event, ranges) {
         plot.setSelection(ranges);
     });
+    $("#savepngbtn").bind("click", function() {
+        oCanvas = $("#placeholder").children()[0]
+        Canvas2Image.saveAsPNG(oCanvas);
+    })
 });
 </script>
 {% endblock %}
