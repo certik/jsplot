@@ -7,8 +7,11 @@ def plot(x, y, format=None, label=None, lw=None):
     if label:
         d["label"] = label
     if format:
-        options = parse_format(format)
-        d.update(options)
+        d.update(parse_format(format))
+    if lw:
+        lines = d.get("lines", {})
+        lines["lineWidth"] = lw
+        d["lines"] = lines
     data.append(d)
 
 def parse_format(f):
@@ -19,9 +22,10 @@ def parse_format(f):
                 "k": "#000000",
                 "r": "#FF0000",
                 "g": "#00FF00",
+                "y": "#FFFF00",
                 }
         if f[0] not in colors:
-            raise Exception("Unsupported color")
+            raise Exception("Unsupported color: '%s'" % f[0])
         options["color"] = colors[f[0]]
         if f[1] == "-":
             options["points"] = {"show": False}
