@@ -1,6 +1,7 @@
 from math import sin, pi
+from base64 import b64encode
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, HttpResponse
 from django.template import RequestContext
 
 import json
@@ -28,6 +29,16 @@ def index(request):
     return render_to_response("index.html", {
         "graphs": graphs,
         "show_import_warning": not jsplot_import_ok,
+        }, context_instance=RequestContext(request))
+
+def digitizer(request):
+    if request.method == "POST":
+        data = request.FILES["image"].read()
+        image = "data:image/png;base64," + b64encode(data)
+    else:
+        image = None
+    return render_to_response("digitizer.html", {
+            "image": image,
         }, context_instance=RequestContext(request))
 
 def raphael(request):

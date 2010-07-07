@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Digitizer
+{% endblock %}
+
+{% block header_ext %}
+<script src="{{ MEDIA_URL }}js/jquery.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $("#holder").click(function (e) {
+        var x;
+        var y;
+        x = e.pageX - this.offsetLeft;
+        y = e.pageY - this.offsetTop;
+        $("#log").text($("#log").text() + "    (" + x + ", " + y + "),\n");
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<h1>Digitizer</h1>
+{% if image %}
+    <p>
+    Log:<br/>
+    <pre id="log">data = [
+</pre><pre>]</pre>
+    Image:<br/>
+    <img id="holder" src="{{ image }}"/>
+    </p>
+    <p>
+    Upload different image:
+{% else %}
+    <p>
+    <img id="holder" src=""/>
+    Upload the image:
+{% endif %}
+<form id="file_upload_form" method="post" action="{% url digitizer %}"
+    enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="image">
+<br />
+<input type="submit" name="action" value="Upload Image" /><br />
+</form>
+</p>
+{% endblock %}
