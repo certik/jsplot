@@ -24,11 +24,12 @@ $(function () {
 <h1>Digitizer</h1>
 {% if image %}
     <p>
+    Image:<br/>
+    <img id="holder" src="{{ image }}"/>
+    <br/>
     Log:<br/>
     <pre id="log">data = [
 </pre><pre>]</pre>
-    Image:<br/>
-    <img id="holder" src="{{ image }}"/>
     </p>
     <p>
     Upload different image:
