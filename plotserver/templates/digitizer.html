@@ -16,6 +16,7 @@ $(function () {
         y = e.pageY - this.offsetTop;
         $("#log").text($("#log").text() + "    (" + x + ", " + y + "),\n");
     });
+    $("#holder").css("cursor", "crosshair")
 });
 </script>
 {% endblock %}
@@ -35,7 +36,6 @@ $(function () {
     Upload different image:
 {% else %}
     <p>
-    <img id="holder" src=""/>
     Upload the image:
 {% endif %}
 <form id="file_upload_form" method="post" action="{% url digitizer %}"
