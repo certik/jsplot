@@ -1,1 +1,1 @@
-from plot import plot, show, grid, legend
+from plot import plot, show, grid, legend, clf

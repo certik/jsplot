@@ -14,6 +14,10 @@ def plot(x, y, format=None, label=None, lw=None):
         d["lines"] = lines
     data.append(d)
 
+def clf():
+    global data
+    data = []
+
 def parse_format(f):
     assert f is not None
     options = {}
