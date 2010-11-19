@@ -27,7 +27,7 @@ More complicated example::
 Going to the url above will show something like the following screenshot, where
 you can interactively zoom in/out.
 
-.. image:: http://github.com/certik/jsplot/raw/master/doc/jsplot1.png
+.. image:: https://github.com/certik/jsplot/raw/master/doc/jsplot1.png
 
 
 Development
